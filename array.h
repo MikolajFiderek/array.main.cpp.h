@@ -15,4 +15,6 @@ void enterDataIntoArray(int *array);
 
 void displayResults(int max, float average);
 
+int saveArrayToFile(int array[]);
+
 #endif //UNTITLED7_ARRAY_H

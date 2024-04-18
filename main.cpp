@@ -8,6 +8,7 @@ void menu(void) {
     printf("4. Determine the maximum value\n");
     printf("5. Determine the average value\n");
     printf("6. Display maximum value and average value\n");
+    printf("7. Save array to file\n");
     printf("Select an option:\n");
 }
 
@@ -25,28 +26,26 @@ int main() {
         switch (option) {
             case 0:
                 break;
-
             case 1:
                 enterDataIntoArray(array);
                 break;
-
             case 2:
                 displayArray(array);
                 break;
-
             case 3:
                 printf("Maximum value = %d\n\n", findMaximumValue(array));
                 break;
-
             case 4:
                 printf("Minimum value = %d\n\n", findMinimumValue(array));
                 break;
-
             case 5:
                 printf("Average value = %f\n\n", calculateAverage(array));
                 break;
             case 6:
                 displayResults(findMaximumValue(array), calculateAverage(array));
+                break;
+            case 7:
+                saveArrayToFile(array);
                 break;
 
             default:
