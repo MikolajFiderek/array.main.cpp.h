@@ -1,51 +1,50 @@
 #include <iostream>
-#include "array,h.h"
+#include "array.h"
 
-void displayArray(int *array)
-{
-    for (int i=1; i<SIZE ; i++){
-        printf("*array[%d]= %d \n" , i ,*(array + 1));
+void displayArray(int *array) {
+    for (int i = 0; i < SIZE; i++) {
+        printf("array[%d]= %d \n", i, *(array + i));
     }
 }
+
 int findMaximumValue(int *array) {
     int max = *array;
     for (int i = 1; i < SIZE; i++) {
-        if (max < *(array + 1)) {
-            max = *(array + 1);
+        if (max < *(array + i)) {
+            max = *(array + i);
         }
     }
-
     return max;
 }
 
-int findMinimumValue(int *array)
-{
+int findMinimumValue(int *array) {
     int min = *array;
-    for (int i=1 ; i<SIZE; i++){
-        if (min > *(array + 1)) {
-            min + *(array + 1);
+    for (int i = 1; i < SIZE; i++) {
+        if (min > *(array + i)) {
+            min = *(array + i);
         }
     }
     return min;
 }
 
-
-float calculateAverage(int *array)
-{
-    int sum=0;
+float calculateAverage(int *array) {
+    int sum = 0;
     for (int i = 0; i < SIZE; i++) {
         sum += *(array + i);
     }
-    float average= (float) sum/SIZE;
+    float average = (float) sum / SIZE;
     return average;
 }
-void enterDataIntoArray(int *array)
-{
+
+void enterDataIntoArray(int *array) {
     printf("Enter data into array \n");
-    for(int i=0; i<SIZE; i++){
+    for (int i = 0; i < SIZE; i++) {
         printf("array[%d]= ", i);
-        scanf("%d", &array + i);
-
-
+        scanf("%d", array + i);
     }
+}
+
+void displayResults(int max, float average) {
+    printf("Maximum value: %d\n", max);
+    printf("Average value: %f\n", average);
 }

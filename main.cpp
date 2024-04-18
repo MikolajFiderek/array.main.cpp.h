@@ -1,5 +1,5 @@
 #include <iostream>
-#include "array,h.h"
+#include "array.h"
 
 void menu(void) {
     printf("1. Enter the values into the array\n");
@@ -7,7 +7,7 @@ void menu(void) {
     printf("3. Determine the minimum value\n");
     printf("4. Determine the maximum value\n");
     printf("5. Determine the average value\n");
-    printf("0. EXIT\n");
+    printf("6. Display maximum value and average value\n");
     printf("Select an option:\n");
 }
 
@@ -17,10 +17,10 @@ int main() {
 
     int option = 0;
 
-    do{
+    do {
         menu();
 
-        scanf( "%d" , &option);
+        scanf("%d", &option);
 
         switch (option) {
             case 0:
@@ -35,15 +35,18 @@ int main() {
                 break;
 
             case 3:
-                printf("Maximum value = %d\n\n" , findMaximumValue(array));
+                printf("Maximum value = %d\n\n", findMaximumValue(array));
                 break;
 
             case 4:
-                printf("Minimum value = %d\n\n" , findMinimumValue(array));
+                printf("Minimum value = %d\n\n", findMinimumValue(array));
                 break;
 
             case 5:
-                printf("Average value = %f\n\n" , calculateAverage(array));
+                printf("Average value = %f\n\n", calculateAverage(array));
+                break;
+            case 6:
+                displayResults(findMaximumValue(array), calculateAverage(array));
                 break;
 
             default:
@@ -52,28 +55,8 @@ int main() {
         }
 
 
-
-    } while(option!=0);
+    } while (option != 0);
     printf("THE END\n");
-
-
-
-
-//    enterDataIntoArray(array);
-//    //display array
-//    displayArray(array);
-//
-//    //find maximum value
-//    int max=findMaximumValue(array);
-//    printf("Maximum value = %d \n", max);
-//
-//    //find minimum value
-//    int min=findMinimumValue(array);
-//    printf("Minimum value = %d \n", min);
-//
-//    //calculate average
-//    float average=calculateAverage(array);
-//    printf("Average value = %f \n", average);
 
     return 0;
 }
