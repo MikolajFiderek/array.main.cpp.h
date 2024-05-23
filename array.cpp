@@ -64,3 +64,23 @@ int saveArrayToFile(int array[]) {
     printf("Array saved to file successfully.\n");
     return 0;
 }
+int loadArrayFromFile(int array[]) {
+    FILE *file;
+    file = fopen("array.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file.\n");
+        return -1;
+    }
+
+    for (int i = 0; i < SIZE; ++i) {
+        if (fscanf(file, "%d", &array[i]) != 1) {
+            printf("Error reading from file.\n");
+            fclose(file);
+            return -1;
+        }
+    }
+
+    fclose(file);
+    printf("Array loaded from file successfully.\n");
+    return 0;
+}

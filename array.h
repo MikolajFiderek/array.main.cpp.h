@@ -17,4 +17,6 @@ void displayResults(int max, float average);
 
 int saveArrayToFile(int array[]);
 
+int loadArrayFromFile(int array[]);
+
 #endif //UNTITLED7_ARRAY_H

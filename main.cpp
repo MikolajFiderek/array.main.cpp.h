@@ -9,6 +9,7 @@ void menu(void) {
     printf("5. Determine the average value\n");
     printf("6. Display maximum value and average value\n");
     printf("7. Save array to file\n");
+    printf("8. Load array from file\n");
     printf("Select an option:\n");
 }
 
@@ -46,6 +47,9 @@ int main() {
                 break;
             case 7:
                 saveArrayToFile(array);
+                break;
+            case 8:
+                loadArrayFromFile(array);
                 break;
 
             default:
