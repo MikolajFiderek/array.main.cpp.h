@@ -1,5 +1,6 @@
 #include <iostream>
 #include "array.h"
+#include <cstdlib>
 
 void menu(void) {
     printf("1. Enter the values into the array\n");
@@ -14,8 +15,14 @@ void menu(void) {
 }
 
 int main() {
-    int array[SIZE] = {1, 2, 3, 50, -5, 6, 7, 8, 9, 10,};
-    printf("Simple array \n");
+
+    int *array = (int *)malloc(SIZE * sizeof(int));
+    if (array == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
+    printf("Simple array program\n");
 
     int option = 0;
 
@@ -59,6 +66,9 @@ int main() {
 
 
     } while (option != 0);
+
+    free(array);
+
     printf("THE END\n");
 
     return 0;

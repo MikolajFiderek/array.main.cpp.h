@@ -48,7 +48,7 @@ void displayResults(int max, float average) {
     printf("Maximum value: %d\n", max);
     printf("Average value: %f\n", average);
 }
-int saveArrayToFile(int array[]) {
+int saveArrayToFile(int *array) {
     FILE *file;
     file = fopen("array.txt", "w");
     if (file == NULL) {
@@ -64,7 +64,7 @@ int saveArrayToFile(int array[]) {
     printf("Array saved to file successfully.\n");
     return 0;
 }
-int loadArrayFromFile(int array[]) {
+int loadArrayFromFile(int *array) {
     FILE *file;
     file = fopen("array.txt", "r");
     if (file == NULL) {

@@ -1,5 +1,5 @@
-#ifndef UNTITLED7_ARRAY_H
-#define UNTITLED7_ARRAY_H
+#ifndef ARRAY_H
+#define ARRAY_H
 
 #define SIZE 10
 
@@ -15,8 +15,8 @@ void enterDataIntoArray(int *array);
 
 void displayResults(int max, float average);
 
-int saveArrayToFile(int array[]);
+int saveArrayToFile(int *array);
 
-int loadArrayFromFile(int array[]);
+int loadArrayFromFile(int *array);
 
-#endif //UNTITLED7_ARRAY_H
+#endif //ARRAY_H
